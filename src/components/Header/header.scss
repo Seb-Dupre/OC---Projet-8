@@ -1,0 +1,22 @@
+
+.app{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    &__menu{
+        display: flex;
+        justify-content: space-between;
+        font-size: 24px;
+        font-weight: 500;
+        .active {
+            text-decoration: underline;
+            color: black;
+          }
+        li{ 
+            color: black;
+            margin-left: 60px;
+
+        }
+    }
+}

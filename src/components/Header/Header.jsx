@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header>
       <div className="app">
-        <NavLink to="/">
+        <NavLink to="Error404">
           <img src={Logo} alt="Logo" />
         </NavLink>
         <ul className="app__menu">

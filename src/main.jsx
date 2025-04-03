@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Logement from "./pages/Logement";
 import About from "./pages/About";
-import Error404 from "./pages/Error404";
+import Error404 from "./pages/Error404/Error404.jsx";
 import { Route, Routes } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(

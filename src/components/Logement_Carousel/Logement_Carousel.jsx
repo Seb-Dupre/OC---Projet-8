@@ -8,10 +8,6 @@ const LogementCarousel = () => {
   const { id } = useParams(); // pour recupérer l'id depuis l'URL
   const caroursel = logement.find((data) => data.id === id);
 
-  if (!caroursel) {
-    return <div>Appartement non trouvé</div>;
-  }
-
   const [slide, setSlide] = useState(0);
 
   const nextImage = () => {

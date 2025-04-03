@@ -1,0 +1,31 @@
+@use "../../scss_variables/variables";
+
+
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100%;
+    overflow-y: auto;
+    &-404{
+        font-size:variables.$font-error;
+        font-weight: variables.$font-weight-2;
+        color: variables.$primary-color;
+        margin: 90px 0 0;
+        line-height: 0.8;
+    }
+    &-message{
+        font-size:variables.$font-size-Large;
+        font-weight: variables.$font-weight-1;
+        color: variables.$primary-color;
+
+
+    }
+    &-link{
+        font-size: variables.$font-size-medium;
+        font-weight:variables.$font-weight-1; 
+        text-decoration: underline;
+        color: black;
+    }
+}

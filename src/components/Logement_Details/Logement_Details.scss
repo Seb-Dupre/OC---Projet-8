@@ -1,0 +1,77 @@
+
+@use "../../scss_variables/variables";
+
+
+.detail-page{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.detail-page_title{
+    h2{
+        color: variables.$primary-color;
+        font-size: variables.$font-size-Large;
+        font-weight: variables.$font-weight-1;
+        margin-bottom: 0;
+    }
+    h3{
+        font-weight: variables.$font-weight-1;
+        font-size: variables.$font-size-medium;
+        margin: 0 0 20px;
+
+    }
+  
+}
+.detail-page_tags{
+    display: flex;
+    gap: 10px;
+    
+    .tag{
+        font-weight: variables.$font-weight-2;
+        font-size: variables.$font-size-small;
+        margin: 0 0 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color:variables.$primary-color;
+        padding:  0 10px;
+        height: 25px;
+        min-width: 115px;
+        border-radius:10px ;
+        
+    }
+}
+.host-info{
+
+display: flex;
+flex-direction: column;
+align-items: end;
+}
+
+.host{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    p{
+        color: variables.$primary-color;
+        font-size: variables.$font-size-medium;
+        margin: 0;
+    }
+    img{
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+    }
+}
+
+.rating{
+.unrated{
+    color: rgba(227, 227, 227, 1);
+}
+.rated{color: variables.$primary-color;
+}
+
+}

@@ -6,19 +6,27 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-height: 100%;
-    overflow-y: auto;
+    text-align: center;
+
+
     &-404{
         font-size:variables.$font-error;
         font-weight: variables.$font-weight-2;
         color: variables.$primary-color;
-        margin: 90px 0 0;
-        line-height: 0.8;
-    }
+        line-height: 0.8;  
+        @media (max-width: variables.$small) {
+        font-size: variables.$small-font-error;    
+     }}
     &-message{
-        font-size:variables.$font-size-Large;
+        font-size:variables.$font-size-Very-Large;
         font-weight: variables.$font-weight-1;
         color: variables.$primary-color;
+        @media (max-width: variables.$small) {
+            font-size: variables.$small-font-size-Very-Large;
+             
+         }
+   
+
 
 
     }
@@ -27,5 +35,19 @@
         font-weight:variables.$font-weight-1; 
         text-decoration: underline;
         color: black;
+        @media (max-width: variables.$small) {
+            font-size: variables.$small-font-size-medium;
+             
+         }
+       
+
     }
+}
+.error-page_margin{
+    margin: 70px 0;
+    @media (max-width: variables.$small) {
+        margin: 57px 0;
+         
+     }
+
 }

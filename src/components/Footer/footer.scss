@@ -1,12 +1,19 @@
+@use "../../scss_variables/variables";
 .footer{
     background-color: black;
-    padding: 65px 0 0;
+    height: 209px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     color: white;
-    font-size: 24px;
-
-
+    font-size:variables.$font-size-Large;
+    margin-top: auto;
+    @media (max-width: variables.$small) {
+        font-size: variables.$small-font-size-Large;
+        justify-content: center;
+        
+        
+         
+     }
 }

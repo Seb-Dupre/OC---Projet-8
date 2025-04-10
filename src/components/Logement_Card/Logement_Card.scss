@@ -1,3 +1,4 @@
+@use "../../scss_variables/variables";
 
 .card_container{
     background-color:#F6F6F6;
@@ -10,7 +11,11 @@
     gap: 50px 60px ;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     margin-bottom: 50px;
-
+    @media (max-width: variables.$small) {
+        gap: 20px;
+        padding: 0;
+        margin-bottom: 25px;
+      }
 }
 
 .card{

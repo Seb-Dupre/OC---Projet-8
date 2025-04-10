@@ -6,19 +6,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: variables.$small) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
 }
 .detail-page_title{
     h2{
         color: variables.$primary-color;
-        font-size: variables.$font-size-Large;
+        font-size: variables.$font-size-Very-Large;
         font-weight: variables.$font-weight-1;
         margin-bottom: 0;
+        @media (max-width: variables.$small) {
+            font-size: variables.$small-font-size-Very-Large;
+            
+          }
     }
     h3{
         font-weight: variables.$font-weight-1;
         font-size: variables.$font-size-medium;
         margin: 0 0 20px;
+        @media (max-width: variables.$small) {
+            font-size: variables.$small-font-size-medium;
+            margin: 0 0 10px;
+          }
 
     }
   
@@ -40,6 +52,13 @@
         height: 25px;
         min-width: 115px;
         border-radius:10px ;
+        @media (max-width: variables.$small) {
+            font-size: variables.$small-font-size-small;
+            margin: 0 0 15px;
+            border-radius:5px ;
+            min-width: 84px;
+            height: 18px;
+          }
         
     }
 }
@@ -48,6 +67,12 @@
 display: flex;
 flex-direction: column;
 align-items: end;
+width: 100%;
+@media (max-width: variables.$small) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .host{
@@ -59,15 +84,29 @@ align-items: end;
         color: variables.$primary-color;
         font-size: variables.$font-size-medium;
         margin: 0;
+        @media (max-width: variables.$small) {
+            font-size: variables.$small-font-size-medium;
+            
+          }
     }
     img{
         border-radius: 50%;
         width: 64px;
         height: 64px;
+        @media (max-width: variables.$small) {
+            width: 32px;
+            height: 32px;
+            
+          }
     }
 }
 
 .rating{
+    font-size: variables.$font-size-Large;
+    @media (max-width: variables.$small) {
+        font-size: variables.$small-font-size-Large;
+        
+      }
 .unrated{
     color: rgba(227, 227, 227, 1);
 }

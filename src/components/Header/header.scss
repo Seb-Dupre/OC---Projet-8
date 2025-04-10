@@ -1,14 +1,22 @@
+@use "../../scss_variables/variables";
 
 .app{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
-    &__menu{
+    
+    
+    &_menu{
+        padding: 0;
         display: flex;
         justify-content: space-between;
-        font-size: 24px;
+        font-size:variables.$font-size-Large;
         font-weight: 500;
+        @media (max-width: variables.$small) {
+            font-size: variables.$small-font-size-Large;
+            flex-wrap: wrap;
+         }
         .active {
             text-decoration: underline;
             color: black;
@@ -16,7 +24,18 @@
         li{ 
             color: black;
             margin-left: 60px;
+            @media (max-width: variables.$small) {
+                margin-left: 25px;  
+             }
 
         }
     }
+    &_logo{
+
+        @media (max-width: variables.$small) {
+           width: 145px;
+            
+        }
+    }
 }
+  

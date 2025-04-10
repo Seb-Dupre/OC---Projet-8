@@ -1,12 +1,29 @@
 
+//Media Queries
+$small: 600px;
+$medium: 900px;
+$large: 1200px;
+
 //Colors
 $primary-color : rgba(255, 96, 96, 1);
 
-//Font Sizes
-$font-size-Large : 36px;
+//Font Sizes large
+$font-size-Very-Large : 36px;
+$font-size-Large: 24px;
 $font-size-medium: 18px;
 $font-size-small: 14px;
 $font-error: 288px;
+
+//font size small
+$small-font-size-Very-Large : 18px;
+$small-font-size-Large: 12px;
+$small-font-size-medium: 13px;
+$small-font-size-small: 10px;
+$small-font-error: 96px;
+
+
+
+
 //Font Weight
 $font-weight-1 :500;
 $font-weight-2 :700;

@@ -14,7 +14,7 @@ const LogementDetails = () => {
   // Split the name into first and last name
   const [firstName, lastName] = name.split(" ");
 
-  const fullStars = Math.floor(rating);
+  const fullStars = rating;
 
   return (
     <div className="detail-page">

@@ -5,17 +5,17 @@ export default function Header() {
   return (
     <header>
       <div className="app">
-        <NavLink to="Error404">
-          <img src={Logo} alt="Logo" />
+        <NavLink to="/">
+          <img className="app_logo" src={Logo} alt="Logo" />
         </NavLink>
-        <ul className="app__menu">
+        <ul className="app_menu">
           <NavLink
             to="/"
             style={({ isActive }) => ({
               textDecoration: isActive ? "active" : "",
             })}
           >
-            <li>Accueil</li>
+            <li>ACCUEIL</li>
           </NavLink>
           <NavLink
             to="about"
@@ -23,7 +23,7 @@ export default function Header() {
               textDecoration: isActive ? "active" : "",
             })}
           >
-            <li>A Propos</li>
+            <li>A PROPOS</li>
           </NavLink>
         </ul>
       </div>

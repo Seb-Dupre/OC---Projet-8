@@ -19,11 +19,11 @@ const AccordeonButton = ({ label, content }) => {
       >
         {isOpen ? (
           <>
-            {label} <FontAwesomeIcon icon={faAngleUp} />
+            {label} <FontAwesomeIcon icon={faAngleUp} className="fa-angle" />
           </>
         ) : (
           <>
-            {label} <FontAwesomeIcon icon={faAngleDown} />
+            {label} <FontAwesomeIcon icon={faAngleDown} className="fa-angle" />
           </>
         )}
       </button>

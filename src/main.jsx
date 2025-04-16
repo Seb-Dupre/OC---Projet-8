@@ -19,7 +19,6 @@ createRoot(document.getElementById("root")).render(
           <Route path="/" element={<Home />} />
           <Route path="/logement/:id" element={<Logement />} />
           <Route path="/about" element={<About />} />
-
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Container>

@@ -5,17 +5,18 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
-    
-    
     &_menu{
         padding: 0;
         display: flex;
         justify-content: space-between;
         font-size:variables.$font-size-Large;
         font-weight: 500;
+        gap: 60px;
         @media (max-width: variables.$small) {
             font-size: variables.$small-font-size-Large;
             flex-wrap: wrap;
+            gap: 25px;
+
          }
         .active {
             text-decoration: underline;
@@ -23,10 +24,7 @@
           }
         li{ 
             color: black;
-            margin-left: 60px;
-            @media (max-width: variables.$small) {
-                margin-left: 25px;  
-             }
+            
 
         }
     }

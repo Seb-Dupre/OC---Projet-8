@@ -1,19 +1,24 @@
-import logement from "../logements.json";
+import { useParams, Navigate } from "react-router-dom";
+import logementData from "../logements.json";
 import LogementCarousel from "../components/Logement_Carousel/Logement_Carousel.jsx";
 import LogementDetails from "../components/Logement_Details/Logement_Details.jsx";
 import AccordeonButton from "../components/Accordeon/Accordeon.jsx";
 
 const Logement = () => {
-  // Supposons que tu veux afficher les détails du premier appartement
-  const accommodation = logement[0];
+  const { id } = useParams();
+
+  const accommodation = logementData.find((logement) => logement.id === id);
+
+  if (!accommodation) {
+    return <Navigate to="/404" replace />;
+  }
 
   return (
     <div>
-      <LogementCarousel />
-      <LogementDetails />
+      <LogementCarousel images={accommodation.pictures} />
+      <LogementDetails logement={accommodation} />
 
       <div className="accordeon-logement">
-        {/* Afficher la description */}
         <div className="Accordeon-button-wrapper">
           <AccordeonButton
             label="Description"
@@ -21,7 +26,6 @@ const Logement = () => {
           />
         </div>
 
-        {/* Afficher les équipements */}
         <div className="Accordeon-button-wrapper">
           <AccordeonButton
             label="Équipements"

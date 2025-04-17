@@ -4,43 +4,72 @@ import logement from "../../logements.json";
 import leftArrow from "../../assets/images/arrows/arrow-left.png";
 import rightArrow from "../../assets/images/arrows/arrow-right.png";
 import "./Logement_Carousel.scss";
+
 const LogementCarousel = () => {
-  const { id } = useParams(); // pour recupérer l'id depuis l'URL
-  const caroursel = logement.find((data) => data.id === id);
+  const { id } = useParams();
+  const carousel = logement.find((data) => data.id === id);
+  const total = carousel.pictures.length;
 
-  const [slide, setSlide] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(null);
+  const [direction, setDirection] = useState("");
+  const [animation, setAnimation] = useState(false);
 
-  const nextImage = () => {
-    setSlide((currantSlide) => (currantSlide + 1) % caroursel.pictures.length); // "%" pour boucler
-  };
+  const handleDirection = (dir) => {
+    if (animation) return;
 
-  const prevImage = () => {
-    setSlide((currantSlide) =>
-      currantSlide === 0 ? caroursel.pictures.length - 1 : currantSlide - 1
-    );
+    let newIndex;
+    if (dir === "right") {
+      newIndex = (currentIndex + 1) % total;
+    } else {
+      newIndex = (currentIndex - 1 + total) % total;
+    }
+
+    setNextIndex(newIndex);
+    setDirection(dir);
+    setAnimation(true);
+
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+      setNextIndex(null);
+      setAnimation(false);
+    }, 500);
   };
 
   return (
     <div className="carousel">
       <img
         src={leftArrow}
-        alt="left-arrrow"
+        alt="left-arrow"
         className="arrow arrow-left"
-        onClick={prevImage}
+        onClick={() => handleDirection("left")}
       />
-      <img
-        className="carousel_slide"
-        src={caroursel.pictures[slide]}
-        alt={`Image ${slide + 1}`}
-      />
-      <div className="carousel_indicator">
-        {slide + 1} / {caroursel.pictures.length}
+      <div className="carousel_viewport">
+        <img
+          key={currentIndex}
+          className="carousel_image current"
+          src={carousel.pictures[currentIndex]}
+          alt={`Slide ${currentIndex + 1}`}
+        />
+        {nextIndex !== null && (
+          <img
+            key={nextIndex}
+            className={`carousel_image incoming slide-from-${direction}`}
+            src={carousel.pictures[nextIndex]}
+            alt={`Slide ${nextIndex + 1}`}
+          />
+        )}
       </div>
+
+      <div className="carousel_indicator">
+        {currentIndex + 1} / {total}
+      </div>
+
       <img
         src={rightArrow}
-        alt="right-arrrow"
+        alt="right-arrow"
         className="arrow arrow-right"
-        onClick={nextImage}
+        onClick={() => handleDirection("right")}
       />
     </div>
   );

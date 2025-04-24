@@ -1,6 +1,6 @@
 import { useParams, Navigate } from "react-router-dom";
 import logementData from "../logements.json";
-import LogementCarousel from "../components/Logement_Carousel/Logement_Carousel.jsx";
+import Carousel from "../components/Carousel/Carousel.jsx";
 import LogementDetails from "../components/Logement_Details/Logement_Details.jsx";
 import AccordeonButton from "../components/Accordeon/Accordeon.jsx";
 
@@ -15,8 +15,8 @@ const Logement = () => {
 
   return (
     <div>
-      <LogementCarousel images={accommodation.pictures} />
-      <LogementDetails logement={accommodation} />
+      <Carousel pictures={accommodation.pictures} />
+      <LogementDetails />
 
       <div className="accordeon-logement">
         <div className="Accordeon-button-wrapper">

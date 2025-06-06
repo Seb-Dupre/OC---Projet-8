@@ -1,29 +1,28 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import leftArrow from "../../assets/images/arrows/arrow-left.png";
 import rightArrow from "../../assets/images/arrows/arrow-right.png";
-import "./Carousel.scss";
+import "./carousel.scss";
 
 const Carousel = ({ pictures = [], animationDuration = 500 }) => {
-  const total = pictures.length;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextIndex, setNextIndex] = useState(null);
   const [direction, setDirection] = useState("");
   const [animation, setAnimation] = useState(false);
 
   const handleDirection = (dir) => {
-    if (animation || total <= 1) return;
+    if (animation || pictures.length <= 1) return;
 
-    let newIndex =
+    const targetIndex =
       dir === "right"
-        ? (currentIndex + 1) % total
-        : (currentIndex - 1 + total) % total;
+        ? (currentIndex + 1) % pictures.length
+        : (currentIndex - 1 + pictures.length) % pictures.length;
 
-    setNextIndex(newIndex);
+    setNextIndex(targetIndex);
     setDirection(dir);
     setAnimation(true);
 
     setTimeout(() => {
-      setCurrentIndex(newIndex);
+      setCurrentIndex(targetIndex);
       setNextIndex(null);
       setAnimation(false);
     }, animationDuration);
@@ -31,7 +30,7 @@ const Carousel = ({ pictures = [], animationDuration = 500 }) => {
 
   return (
     <div className="carousel">
-      {total > 1 && (
+      {pictures.length > 1 && (
         <img
           src={leftArrow}
           alt="left-arrow"
@@ -58,10 +57,10 @@ const Carousel = ({ pictures = [], animationDuration = 500 }) => {
         )}
       </div>
 
-      {total > 1 && (
+      {pictures.length > 1 && (
         <>
           <div className="carousel_indicator">
-            {currentIndex + 1} / {total}
+            {currentIndex + 1} / {pictures.length}
           </div>
 
           <img

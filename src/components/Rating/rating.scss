@@ -1,0 +1,21 @@
+
+@use "../../scss_variables/variables";
+
+
+
+.rating{
+
+    font-size: variables.$font-size-Large;
+    display: flex;
+    gap: 5px;
+    @media (max-width: variables.$small) {
+        font-size: variables.$small-font-size-Large;
+        
+      }
+.unrated{
+    color: rgba(227, 227, 227, 1);
+}
+.rated{color: variables.$primary-color;
+}
+
+}

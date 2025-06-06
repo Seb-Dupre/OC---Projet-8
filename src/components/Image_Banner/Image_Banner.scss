@@ -14,10 +14,9 @@
         border-radius: 10px;
         @media (max-width: variables.$small) {
            height: 111px;
-         }
+         }}
 
-    }
-    p{
+    h2{
         position: absolute;
         color: white;
         font-size: 48px;
@@ -28,6 +27,5 @@
             padding: 0 16px;
 
              
-         }
-    } 
+         }} 
 }

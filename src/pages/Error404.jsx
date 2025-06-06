@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "./Error404.scss";
+import "./pages_style/error404.scss";
 export default function Error404() {
   return (
     <div className="error error-page_margin">

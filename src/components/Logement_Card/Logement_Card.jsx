@@ -1,6 +1,7 @@
-import "./Logement_Card.scss";
+import "./logement_Card.scss";
 import { Link } from "react-router-dom";
 import logement from "../../logements.json";
+
 export default function LogementCard() {
   return (
     <div className="card_container">

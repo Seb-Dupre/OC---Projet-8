@@ -1,0 +1,28 @@
+
+@use "../../scss_variables/variables";
+
+.host{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    p{
+        color: variables.$primary-color;
+        font-size: variables.$font-size-medium;
+        font-weight:variables.$font-weight-1;
+        margin: 0;
+        @media (max-width: variables.$small) {
+            font-size: variables.$small-font-size-medium;
+          }
+    }
+    img{
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+        @media (max-width: variables.$small) {
+            width: 32px;
+            height: 32px;
+     
+          }
+    }
+}
+

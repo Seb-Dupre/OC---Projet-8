@@ -1,0 +1,27 @@
+@use "../../scss_variables/variables";
+
+
+.detail-page_title{
+    h2{
+        color: variables.$primary-color;
+        font-size: variables.$font-size-Very-Large;
+        font-weight: variables.$font-weight-1;
+        margin: 0;
+        @media (max-width: variables.$small) {
+            font-size: variables.$small-font-size-Very-Large;
+            
+          }
+    }
+    h3{
+        font-weight: variables.$font-weight-1;
+        font-size: variables.$font-size-medium;
+        margin: 0;
+        @media (max-width: variables.$small) {
+            font-size: variables.$small-font-size-medium;
+          }
+
+    }
+  
+}
+
+

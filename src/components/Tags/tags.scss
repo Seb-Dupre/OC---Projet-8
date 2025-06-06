@@ -1,0 +1,29 @@
+@use "../../scss_variables/variables";
+
+.tags{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+    .tag{
+        font-weight: variables.$font-weight-2;
+        font-size: variables.$font-size-small;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color:variables.$primary-color;
+        padding:  0 10px;
+        height: 25px;
+        min-width: 115px;
+        border-radius:10px ;
+        @media (max-width: variables.$small) {
+            font-size: variables.$small-font-size-small;
+            border-radius:5px ;
+            min-width: 84px;
+            height: 18px;
+          }
+        
+    }
+}
